@@ -57,28 +57,35 @@
     .result-card {
       width: 100%;
       border: 1px solid var(--line);
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 20px 60px rgba(17, 17, 17, 0.08);
+      border-radius: 26px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.9)),
+        var(--white);
+      box-shadow: 0 24px 70px rgba(17, 17, 17, 0.08);
     }
 
     .hero {
-      padding: 36px 26px;
+      padding: 36px 26px 30px;
       text-align: center;
     }
 
     .mark {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 18px;
-      border-radius: 50%;
+      width: 92px;
+      height: 76px;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 22px;
+      object-fit: contain;
       background: var(--yellow);
-      color: var(--black);
-      font-size: 24px;
-      font-weight: 900;
-      box-shadow: 0 10px 24px rgba(255, 210, 30, 0.4);
+      box-shadow: 0 16px 32px rgba(255, 210, 30, 0.36);
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+      margin-bottom: 10px;
     }
 
     h1,
@@ -88,16 +95,16 @@
     }
 
     h1 {
-      font-size: clamp(25px, 7.4vw, 36px);
-      line-height: 1.22;
+      font-size: clamp(27px, 7vw, 35px);
+      line-height: 1.16;
       font-weight: 900;
     }
 
     .lead {
-      margin-top: 14px;
+      margin-top: 16px;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.85;
       font-weight: 700;
     }
 
@@ -113,10 +120,10 @@
 
     .primary-button {
       margin-top: 26px;
-      padding: 16px 18px;
+      padding: 17px 18px;
       background: var(--yellow);
       color: var(--black);
-      box-shadow: 0 12px 24px rgba(255, 210, 30, 0.28);
+      box-shadow: 0 14px 26px rgba(255, 210, 30, 0.3);
       text-decoration: none;
       display: inline-flex;
       justify-content: center;
@@ -129,7 +136,7 @@
     }
 
     .question-card {
-      padding: 26px 20px 22px;
+      padding: 28px 20px 22px;
     }
 
     .progress {
@@ -161,7 +168,7 @@
     }
 
     .question {
-      font-size: 21px;
+      font-size: 20px;
       line-height: 1.45;
       font-weight: 900;
     }
@@ -174,12 +181,13 @@
 
     .choice-button {
       min-height: 58px;
-      padding: 14px 16px;
+      padding: 15px 16px;
       border: 1px solid #efe4c8;
       background: var(--white);
       color: var(--black);
       text-align: left;
       line-height: 1.55;
+      font-weight: 800;
       box-shadow: 0 8px 20px rgba(17, 17, 17, 0.04);
     }
 
@@ -199,19 +207,19 @@
     .label {
       color: var(--muted);
       font-size: 13px;
-      font-weight: 900;
+      font-weight: 700;
     }
 
     .result-title {
       margin-top: 6px;
-      font-size: 26px;
+      font-size: 24px;
       line-height: 1.35;
       font-weight: 900;
     }
 
     .description {
       margin-top: 18px;
-      line-height: 1.85;
+      line-height: 1.9;
       font-size: 15px;
       font-weight: 700;
     }
@@ -229,8 +237,8 @@
       grid-template-columns: 24px 1fr;
       gap: 10px;
       align-items: start;
-      font-weight: 800;
-      line-height: 1.6;
+      font-weight: 700;
+      line-height: 1.7;
     }
 
     .check {
@@ -242,9 +250,9 @@
       margin-top: 28px;
       padding-top: 24px;
       border-top: 2px solid var(--yellow);
-      line-height: 1.85;
+      line-height: 1.9;
       font-size: 15px;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .cta {
@@ -257,9 +265,9 @@
     }
 
     .cta p {
-      line-height: 1.8;
+      line-height: 1.85;
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .cta .primary-button {
@@ -282,7 +290,7 @@
       }
 
       .hero {
-        padding: 34px 22px;
+        padding: 32px 22px 28px;
       }
 
       .question-card {
@@ -299,10 +307,11 @@
   <main class="app">
     <section id="start-screen" class="screen active">
       <div class="hero">
-        <div class="mark">C</div>
-        <h1>20代キャリア<br>現在地診断</h1>
-        <p class="lead">転職？スクール？独立？焦って決める前に、まず自分の現在地を整理しよう。5問・1分で完了します。</p>
-        <button class="primary-button" type="button" id="start-button">診断スタート</button>
+        <img class="mark" src="carricoco-symbol.png" alt="キャリココ">
+        <p class="eyebrow">キャリココ｜20代キャリア現在地診断</p>
+        <h1>このまま働いて、<br>後悔しない？</h1>
+        <p class="lead">転職するか、残るか、学ぶか。決めきれない理由を、まずは5問で整理してみてください。</p>
+        <button class="primary-button" type="button" id="start-button">いまの現在地を見てみる</button>
       </div>
     </section>
 
@@ -325,13 +334,13 @@
           <p class="description" id="result-description"></p>
           <ul class="steps" id="result-steps"></ul>
           <div class="encourage">
-            <p>今の状態がゴールではありません。<br>ここから、選び方と積む経験を変えればキャリアは作れます。</p>
-            <p style="margin-top: 16px;">転職するかどうかを今すぐ決めなくても大丈夫です。<br>まずはあなたに残っているチャンスと、次に積むべき経験を一緒に整理しましょう。</p>
+            <p>今のモヤモヤだけで、将来が決まるわけではありません。<br>選び方と積む経験を変えれば、キャリアはここから作れます。</p>
+            <p style="margin-top: 16px;">転職するかどうかは、今すぐ決めなくて大丈夫です。<br>まずは、あなたに残っている選択肢を一緒に整理しましょう。</p>
           </div>
         </div>
         <div class="cta">
-          <p>転職するかどうかは、まだ決めなくて大丈夫です。大事なのは、今の現在地と次に積むべき経験を整理すること。キャリココ公式LINEでは、あなたの状況に合わせてキャリアの方向性を一緒に整理できます。</p>
-          <a class="primary-button" href="https://lin.ee/5OpJY90" target="_blank" rel="noopener">LINEでチャンスを整理する</a>
+          <p>求人を見る前に、スクールに入る前に、まずは今の現在地を一緒に整理しましょう。キャリココ公式LINEでは、あなたの状況に合わせて、次に積むべき経験とキャリアの方向性を一緒に考えます。</p>
+          <a class="primary-button" href="https://lin.ee/5OpJY90" target="_blank" rel="noopener">LINEでキャリア相談する</a>
         </div>
       </div>
     </section>
@@ -340,27 +349,27 @@
   <script>
     const questions = [
       {
-        text: "今の仕事について、一番近い感覚は？",
+        text: "今の仕事について、いちばん近い感覚は？",
         choices: [
-          ["A", "何が嫌なのか自分でもよくわからない"],
-          ["B", "頑張っているけど、この先が見えない"],
-          ["C", "早く環境を変えないと遅れる気がする"],
-          ["D", "もっと成長できる仕事に挑戦したい"]
+          ["A", "嫌いではないけど、ずっと引っかかっている"],
+          ["B", "頑張っているのに、この先の絵が見えない"],
+          ["C", "早く変わらないと置いていかれそうで焦る"],
+          ["D", "もっと成長できる場所に移りたい"]
         ]
       },
       {
-        text: "キャリアを考える時に一番不安なことは？",
+        text: "キャリアを考える時、いちばん不安なことは？",
         choices: [
           ["A", "やりたいことがない"],
           ["B", "自分の強みがわからない"],
-          ["C", "転職・スクール・独立の情報が多すぎる"],
+          ["C", "転職・スクール・独立の情報に振り回される"],
           ["D", "未経験で通用するのかわからない"]
         ]
       },
       {
         text: "SNSを見て焦ることはある？",
         choices: [
-          ["A", "あるけど、何に焦っているのかわからない"],
+          ["A", "ある。けど、何に焦っているのかまでは言えない"],
           ["B", "同世代が成長しているのを見ると不安になる"],
           ["C", "フリーランスや副業の投稿を見ると遅れている気がする"],
           ["D", "自分ももっと実力をつけたいと思う"]
@@ -388,23 +397,23 @@
 
     const results = {
       A: {
-        title: "モヤモヤ言語化タイプ",
-        description: "今すぐ大きな決断をするより、まず何にモヤモヤしているのかを言葉にする段階です。やりたいことがないのは悪いことではありません。自分の仕事や人生について考え始めたサインです。",
-        steps: ["今の仕事でしんどいことを書き出す", "少しでも前向きになれた経験を振り返る", "転職するか決める前に、現在地を整理する"]
+        title: "まずは、モヤモヤを言葉にする時期",
+        description: "今すぐ大きな決断をしなくて大丈夫です。動けないのは、意志が弱いからではなく、何に引っかかっているのかがまだ言葉になっていないだけかもしれません。",
+        steps: ["今の仕事でしんどい瞬間を書き出す", "少しでも前向きになれた経験を思い出す", "転職するか決める前に、現在地を整理する"]
       },
       B: {
-        title: "強み整理タイプ",
-        description: "今の経験をどう次につなげるかを整理すると、選択肢が見えやすくなります。頑張ってきた経験があっても、それを言語化できていないと、自分には何もないように感じやすいです。",
-        steps: ["これまで任されたことを書き出す", "感謝された経験を振り返る", "今の経験がどの職種に活きるか整理する"]
+        title: "積んできた経験を棚卸しする時期",
+        description: "ちゃんと頑張ってきたのに、自分の強みとして見えていない状態です。経験を言葉にすると、次に選べる仕事や環境がかなり見えやすくなります。",
+        steps: ["これまで任されたことを書き出す", "人から感謝された場面を振り返る", "今の経験がどの職種に活きるか整理する"]
       },
       C: {
-        title: "焦りリセットタイプ",
-        description: "SNSの強い言葉に引っ張られて、焦りが先に来ている状態です。スクールも転職も独立も悪い選択ではありません。ただ、今の現在地を見ないまま飛ぶと、選択を間違えやすくなります。",
+        title: "焦りを止めて、選び方を整える時期",
+        description: "SNSを見て焦るのは自然です。ただ、焦ったまま転職・スクール・独立を決めると、あとで苦しくなることがあります。まずは今の自分に必要な経験を見極めましょう。",
         steps: ["スクールに入る目的を明確にする", "独立前に必要な実務経験を整理する", "今すぐ変えるべきことと、積むべき経験を分ける"]
       },
       D: {
-        title: "キャリアアップ挑戦タイプ",
-        description: "環境を変えることで、成長のスピードを上げられる可能性があります。ただし、未経験職種に行く場合は、どの環境で何を積むかがかなり大事です。",
+        title: "環境を変えて伸ばす準備がある時期",
+        description: "成長したい気持ちがはっきり出ています。大事なのは、勢いだけで選ばないこと。どの環境で、どんな経験を積むかまで決めると、次の一歩が強くなります。",
         steps: ["営業・販売など対人力が伸びる仕事を知る", "自分に合う成長環境を整理する", "求人を見る前に、キャリアの軸を決める"]
       }
     };
