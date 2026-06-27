@@ -340,7 +340,7 @@
         </div>
         <div class="cta">
           <p>求人を見る前に、スクールに入る前に、まずは今の現在地を一緒に整理しましょう。キャリココ公式LINEでは、あなたの状況に合わせて、次に積むべき経験とキャリアの方向性を一緒に考えます。</p>
-          <a class="primary-button" href="https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean" target="_blank" rel="noopener">LINEでキャリア相談する</a>
+          <a class="primary-button" id="line-cta" href="https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean" target="_blank" rel="noopener">LINEでキャリア相談する</a>
         </div>
       </div>
     </section>
@@ -418,6 +418,18 @@
       }
     };
 
+    const lineRoutes = {
+      default: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean",
+      x: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean",
+      twitter: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean",
+      threads: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=hlHean",
+      instagram: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=u5hcjz",
+      ig: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=u5hcjz",
+      tiktok: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=u5hcjz",
+      note: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=wYB3yK",
+      article: "https://s.lmes.jp/landing-qr/2010510428-cajnjJXS?uLand=wYB3yK"
+    };
+
     const scores = { A: 0, B: 0, C: 0, D: 0 };
     let current = 0;
 
@@ -428,6 +440,13 @@
     const choicesEl = document.getElementById("choices");
     const countEl = document.getElementById("count");
     const barEl = document.getElementById("bar");
+    const lineCta = document.getElementById("line-cta");
+
+    function applyLineRoute() {
+      const params = new URLSearchParams(window.location.search);
+      const source = (params.get("src") || params.get("utm_source") || "default").toLowerCase();
+      lineCta.href = lineRoutes[source] || lineRoutes.default;
+    }
 
     function show(screen) {
       [startScreen, questionScreen, resultScreen].forEach((el) => el.classList.remove("active"));
@@ -490,6 +509,8 @@
       renderQuestion();
       show(questionScreen);
     });
+
+    applyLineRoute();
   </script>
 </body>
 </html>
